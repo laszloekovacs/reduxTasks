@@ -1,7 +1,10 @@
 import React from 'react';
 import {TASK_STATUSES} from './TaskPage';
+import {useSelector} from 'react-redux';
 
 const Task = (props) => {
+	const taskList = useSelector((state) => state.tasks);
+
 	function onStatusChange(e) {
 		props.onStatusChange(props.task.id, e.target.value);
 	}
