@@ -1017,18 +1017,19 @@ var _reducers = require("./reducers");
 var _reducersDefault = parcelHelpers.interopDefault(_reducers);
 var _styleCss = require("./style.css");
 var _reactRedux = require("react-redux");
-const store = _redux.createStore(_reducersDefault.default);
+var _reduxDevtoolsExtension = require("redux-devtools-extension");
+const store = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
 const root = _client.createRoot(document.getElementById('App'));
 root.render(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRedux.Provider, {
     store: store,
     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_appDefault.default, {}, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 3
     }, undefined)
 }, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 13,
+    lineNumber: 14,
     columnNumber: 2
 }, undefined));
 
@@ -1037,7 +1038,7 @@ root.render(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRedux.Provider, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/App":"bCxdS","redux":"cDNB3","./reducers":"3OJOh","./style.css":"bhJkM","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/App":"bCxdS","redux":"cDNB3","./reducers":"3OJOh","./style.css":"bhJkM","react-redux":"bdVon","redux-devtools-extension":"fOPxo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-dev-runtime.development.js');
 
@@ -25162,7 +25163,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(App);
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./TaskPage":"9GDdd","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../actions":"cUdES"}],"9GDdd":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./TaskPage":"9GDdd","react-redux":"bdVon","../actions":"cUdES","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GDdd":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e238 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25224,7 +25225,6 @@ class TaskPage extends _react.Component {
     };
     renderTaskList() {
         const { tasks  } = this.props;
-        console.log(tasks);
         return TASK_STATUSES.map((status)=>{
             const statusTasks = tasks.filter((task)=>task.status === status
             );
@@ -25234,7 +25234,7 @@ class TaskPage extends _react.Component {
                 onStatusChange: this.props.onStatusChange
             }, status, false, {
                 fileName: "src/components/TaskPage.jsx",
-                lineNumber: 52,
+                lineNumber: 51,
                 columnNumber: 5
             }, this);
         });
@@ -25250,12 +25250,12 @@ class TaskPage extends _react.Component {
                         children: "+ new task"
                     }, void 0, false, {
                         fileName: "src/components/TaskPage.jsx",
-                        lineNumber: 65,
+                        lineNumber: 64,
                         columnNumber: 6
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/TaskPage.jsx",
-                    lineNumber: 64,
+                    lineNumber: 63,
                     columnNumber: 5
                 }, this),
                 this.state.showNewCardForm && /*#__PURE__*/ _jsxDevRuntime.jsxDEV("form", {
@@ -25270,7 +25270,7 @@ class TaskPage extends _react.Component {
                             placeholder: "title"
                         }, void 0, false, {
                             fileName: "src/components/TaskPage.jsx",
-                            lineNumber: 77,
+                            lineNumber: 76,
                             columnNumber: 7
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25281,7 +25281,7 @@ class TaskPage extends _react.Component {
                             placeholder: "description"
                         }, void 0, false, {
                             fileName: "src/components/TaskPage.jsx",
-                            lineNumber: 84,
+                            lineNumber: 83,
                             columnNumber: 7
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25290,13 +25290,13 @@ class TaskPage extends _react.Component {
                             children: "Save"
                         }, void 0, false, {
                             fileName: "src/components/TaskPage.jsx",
-                            lineNumber: 91,
+                            lineNumber: 90,
                             columnNumber: 7
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/TaskPage.jsx",
-                    lineNumber: 73,
+                    lineNumber: 72,
                     columnNumber: 6
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25304,7 +25304,7 @@ class TaskPage extends _react.Component {
                     children: this.renderTaskList()
                 }, void 0, false, {
                     fileName: "src/components/TaskPage.jsx",
-                    lineNumber: 97,
+                    lineNumber: 96,
                     columnNumber: 5
                 }, this)
             ]
@@ -25458,7 +25458,7 @@ $RefreshReg$(_c, "Task");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./TaskPage":"9GDdd"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./TaskPage":"9GDdd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27413,6 +27413,8 @@ parcelHelpers.export(exports, "createTask", ()=>createTask
 );
 parcelHelpers.export(exports, "editTask", ()=>editTask
 );
+parcelHelpers.export(exports, "fetchTask", ()=>fetchTask
+);
 let _id = 1;
 function uniqueId() {
     return _id++;
@@ -27435,6 +27437,13 @@ function editTask(id, params = {}) {
             id,
             params
         }
+    };
+}
+function fetchTask() {
+    return (dispatch)=>{
+        api.fetchTasks().then((resp)=>{
+            dispatch(fetchTasksSucceeded(resp.data));
+        });
     };
 }
 
@@ -28062,6 +28071,21 @@ function tasksReducer(state = {
 }
 exports.default = tasksReducer;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../actions":"cUdES"}],"bhJkM":[function() {},{}]},["kn9T2","1wDOc","d8Dch"], "d8Dch", "parcelRequire8671")
+},{"../actions":"cUdES","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bhJkM":[function() {},{}],"fOPxo":[function(require,module,exports) {
+'use strict';
+var compose = require('redux').compose;
+exports.__esModule = true;
+exports.composeWithDevTools = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : function() {
+    if (arguments.length === 0) return undefined;
+    if (typeof arguments[0] === 'object') return compose;
+    return compose.apply(null, arguments);
+};
+exports.devToolsEnhancer = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__ : function() {
+    return function(noop) {
+        return noop;
+    };
+};
+
+},{"redux":"cDNB3"}]},["kn9T2","1wDOc","d8Dch"], "d8Dch", "parcelRequire8671")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

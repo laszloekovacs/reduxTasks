@@ -5,8 +5,9 @@ import {createStore} from 'redux';
 import tasksReducer from './reducers';
 import './style.css';
 import {Provider} from 'react-redux';
+import {devToolsEnhancer} from 'redux-devtools-extension';
 
-const store = createStore(tasksReducer);
+const store = createStore(tasksReducer, devToolsEnhancer());
 
 const root = ReactDOM.createRoot(document.getElementById('App'));
 root.render(

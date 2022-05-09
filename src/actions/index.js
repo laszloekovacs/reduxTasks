@@ -23,3 +23,12 @@ export function editTask(id, params = {}) {
         }
     }
 }
+
+
+export function fetchTask() {
+    return dispatch => {
+        api.fetchTasks().then(resp => {
+            dispatch(fetchTasksSucceeded(resp.data))
+        })
+    }
+}

@@ -45,7 +45,6 @@ export default class TaskPage extends Component {
 	renderTaskList() {
 		const {tasks} = this.props;
 
-		console.log(tasks);
 		return TASK_STATUSES.map((status) => {
 			const statusTasks = tasks.filter((task) => task.status === status);
 			return (
